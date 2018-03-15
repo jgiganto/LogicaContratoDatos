@@ -1,0 +1,45 @@
+﻿@model CienteContratoDatos.ServicioAlumnos.Alumno[]
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           NOMBRE
+        </th>
+        <th>
+           APELLIDOS
+        </th>
+        <th>
+           NOTA
+        </th>   
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Nombre
+        </td>
+        <td>
+            @item.Apellidos
+        </td>
+        <td>
+            @item.Nota
+        </td>        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { idalumno=item.IdAlumno }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
